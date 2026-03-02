@@ -87,10 +87,10 @@ export default function Home() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full relative z-10 flex-1 min-h-0 flex items-end justify-center mt-6"
+          className="w-full relative z-0 flex-1 min-h-0 flex items-end justify-center -mt-20 sm:-mt-32 md:-mt-48 lg:-mt-64"
         >
-          {/* Creative Massive Foreground Typography (Shatayu Marquee) - Floating OVER the image */}
-          <div className="absolute top-[25%] md:top-[35%] w-full overflow-hidden flex items-center z-30 pointer-events-none select-none my-auto mix-blend-overlay">
+          {/* Creative Massive Foreground Typography (Shatayu Marquee) - Floating BEHIND the image and text */}
+          <div className="absolute top-[18%] sm:top-[10%] md:top-[15%] w-full overflow-hidden flex items-center z-0 pointer-events-none select-none my-auto mix-blend-overlay">
             <motion.div
               initial={{ x: 0, opacity: 0 }}
               animate={{ x: "-50%", opacity: 1 }}
@@ -110,7 +110,7 @@ export default function Home() {
           </div>
 
           {/* The Hero Image (Mobile Specific - Modern & Floating) */}
-          <div className="relative w-full h-[45vh] sm:h-[50vh] max-h-[500px] flex items-end justify-center z-20 md:hidden pb-4">
+          <div className="relative w-full h-[45vh] sm:h-[50vh] max-h-[500px] flex items-end justify-center z-10 md:hidden pb-4">
             {/* Elegant Divine Aura (Pulsating Glow) */}
             <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 w-[70vw] h-[70vw] rounded-full bg-gradient-to-tr from-primary/30 via-amber-500/10 to-transparent blur-3xl animate-[pulse_6s_ease-in-out_infinite]" />
 
@@ -131,7 +131,7 @@ export default function Home() {
           </div>
 
           {/* The Hero Image (Desktop Original - Edge to Edge) */}
-          <div className="relative w-full h-[55vh] md:h-[60vh] lg:h-[70vh] max-h-[900px] flex items-end justify-center z-20 hidden md:flex">
+          <div className="relative w-full h-[55vh] md:h-[60vh] lg:h-[70vh] max-h-[900px] flex items-end justify-center z-10 hidden md:flex">
             <Image
               src="/assets/hero-posed-1.png"
               alt="Yoga practice — balance and mindfulness"
