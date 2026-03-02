@@ -1,0 +1,293 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* 
+   * Hero Image Theme Palette: 
+   * Background: Warm Cream/Beige
+   * Primary Text/Brand: Deep Forest Green
+   * Accents: Rose/Pink (matching the yoga outfit)
+   */
+  --background: oklch(0.975 0.015 95);
+  /* Warm Cream */
+  --foreground: oklch(0.28 0.04 145);
+  /* Deep Forest Green/Charcoal */
+
+  --card: oklch(0.99 0.005 95);
+  /* Very light cream/white */
+  --card-foreground: oklch(0.28 0.04 145);
+
+  --popover: oklch(0.99 0.005 95);
+  --popover-foreground: oklch(0.28 0.04 145);
+
+  --primary: oklch(0.35 0.08 145);
+  /* Rich Deep Green (Shatayu text) */
+  --primary-foreground: oklch(0.98 0.01 95);
+  /* Light Cream for text on primary */
+
+  --secondary: oklch(0.93 0.02 95);
+  /* Slightly darker warm cream */
+  --secondary-foreground: oklch(0.35 0.08 145);
+
+  --muted: oklch(0.94 0.015 95);
+  /* Muted cream */
+  --muted-foreground: oklch(0.55 0.03 145);
+  /* Softened green/grey */
+
+  --accent: oklch(0.65 0.18 350);
+  /* Rose/Pink (from the yoga pose outfit) */
+  --accent-foreground: oklch(0.98 0.01 95);
+
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+
+  --border: oklch(0.88 0.02 115);
+  /* Warm subtle border */
+  --input: oklch(0.88 0.02 115);
+  --ring: oklch(0.35 0.08 145);
+
+  --radius: 1rem;
+  --radius-sm: 0.5rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-3xl: 2.5rem;
+
+  /* Touch-friendly & safe area */
+  --touch-min: 44px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --navbar-h: 72px;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --navbar-h: 80px;
+  }
+}
+
+@theme inline {
+  --font-sans: var(--font-sans), 'Poppins', 'system-ui', 'sans-serif';
+  --font-serif: var(--font-sans), 'Poppins', 'system-ui', 'sans-serif';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    padding-top: var(--safe-top);
+    padding-bottom: var(--safe-bottom);
+  }
+
+  /* Mobile-first type scale: base = mobile */
+  h1 {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl;
+  }
+
+  h2 {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  h3 {
+    @apply text-xl sm:text-2xl md:text-3xl;
+  }
+}
+
+@layer utilities {
+  .fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-in-out;
+  }
+
+  .fade-in-down {
+    animation: fadeInDown 0.6s ease-in-out;
+  }
+
+  .scale-in {
+    animation: scaleIn 0.5s ease-in-out;
+  }
+
+  .slide-in-left {
+    animation: slideInLeft 0.6s ease-in-out;
+  }
+
+  .slide-in-right {
+    animation: slideInRight 0.6s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-spin-slow {
+    animation: spin 40s linear infinite;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  /* Mobile-first container: padding on small screens, max-width on large */
+  .container-tight {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container-tight {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-tight {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  /* Touch target minimum for mobile */
+  .touch-target {
+    min-height: var(--touch-min);
+    min-width: var(--touch-min);
+  }
+
+  /* Hide scrollbar for horizontal scroll areas on mobile */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
