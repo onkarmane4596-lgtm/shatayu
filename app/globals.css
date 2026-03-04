@@ -4,49 +4,46 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* 
-   * Hero Image Theme Palette: 
-   * Background: Warm Cream/Beige
-   * Primary Text/Brand: Deep Forest Green
-   * Accents: Rose/Pink (matching the yoga outfit)
+  /*
+   * Wellness Challenge App Theme Palette:
+   * Background: Warm Canvas (#FFFBF2)
+   * Primary Text: Dark Earth Tone (#2F4343)
+   * Accents: Be Calm Icons/Ticks (#E67E22), Flexible Ticks (#5F9EA0)
+   * CTA: Gradient from Deeper Teal-Blue (#5DA89F) to Brighter Sky Blue (#5EA8E6)
    */
-  --background: oklch(0.975 0.015 95);
-  /* Warm Cream */
-  --foreground: oklch(0.28 0.04 145);
-  /* Deep Forest Green/Charcoal */
+  --background: #FFFBF2;
+  --foreground: #2F4343;
 
-  --card: oklch(0.99 0.005 95);
-  /* Very light cream/white */
-  --card-foreground: oklch(0.28 0.04 145);
+  --card: #FFFBF2;
+  --card-foreground: #2F4343;
 
-  --popover: oklch(0.99 0.005 95);
-  --popover-foreground: oklch(0.28 0.04 145);
+  --popover: #FFFBF2;
+  --popover-foreground: #2F4343;
 
-  --primary: oklch(0.35 0.08 145);
-  /* Rich Deep Green (Shatayu text) */
-  --primary-foreground: oklch(0.98 0.01 95);
-  /* Light Cream for text on primary */
+  /* Primary color used for action bases and some texts. Mapped to CTA Button Start */
+  --primary: #5DA89F;
+  --primary-foreground: #FFFBF2;
 
-  --secondary: oklch(0.93 0.02 95);
-  /* Slightly darker warm cream */
-  --secondary-foreground: oklch(0.35 0.08 145);
+  /* Secondary mapped to Flexible Ticks */
+  --secondary: #5F9EA0;
+  --secondary-foreground: #FFFBF2;
 
-  --muted: oklch(0.94 0.015 95);
-  /* Muted cream */
-  --muted-foreground: oklch(0.55 0.03 145);
-  /* Softened green/grey */
+  --muted: #fef0cd;
+  /* Slightly darker warm cream for muted areas */
+  --muted-foreground: #705030;
+  /* Softer text color */
 
-  --accent: oklch(0.65 0.18 350);
-  /* Rose/Pink (from the yoga pose outfit) */
-  --accent-foreground: oklch(0.98 0.01 95);
+  /* Accent mapped to Warm Energy Accent / Be Calm Icons */
+  --accent: #E67E22;
+  --accent-foreground: #FFFBF2;
 
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(1 0 0);
 
-  --border: oklch(0.88 0.02 115);
-  /* Warm subtle border */
-  --input: oklch(0.88 0.02 115);
-  --ring: oklch(0.35 0.08 145);
+  --border: #e6d8c3;
+  /* Warm subtle border matching canvas */
+  --input: #e6d8c3;
+  --ring: #5DA89F;
 
   --radius: 1rem;
   --radius-sm: 0.5rem;

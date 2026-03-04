@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Poppins, Yatra_One } from 'next/font/google'
+import { Poppins, Yatra_One, Khand } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
@@ -15,6 +15,12 @@ const yatraOne = Yatra_One({
   subsets: ['devanagari', 'latin'],
   weight: ['400'],
   variable: '--font-marathi',
+});
+
+const khand = Khand({
+  subsets: ['devanagari', 'latin'],
+  weight: ['600', '700'],
+  variable: '--font-impact',
 });
 
 export const metadata: Metadata = {
@@ -94,7 +100,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${yatraOne.variable}`}>
+    <html lang="en" className={`${poppins.variable} ${yatraOne.variable} ${khand.variable}`}>
       <body className="font-sans font-medium antialiased min-h-screen flex flex-col bg-background text-foreground selection:bg-primary/20 selection:text-primary overflow-x-hidden">
         <Navbar />
         <main className="flex-1 w-full relative z-0">

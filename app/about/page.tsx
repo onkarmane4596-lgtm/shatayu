@@ -12,19 +12,18 @@ export default function AboutPage() {
     return (
         <div className="bg-background pb-32 overflow-hidden selection:bg-primary/20 selection:text-primary">
 
-            {/* Standard Header Banner */}
-            <section className="bg-secondary/30 pt-32 pb-14 sm:pt-40 sm:pb-20 lg:pt-48 lg:pb-28 border-b border-border/40 relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-72 h-72 sm:w-96 sm:h-96 bg-primary/10 rounded-full blur-[80px] -translate-x-1/2 -translate-y-1/2" />
-                <div className="absolute bottom-0 right-0 w-72 h-72 sm:w-96 sm:h-96 bg-primary/10 rounded-full blur-[80px] translate-x-1/3 translate-y-1/3" />
+            {/* Standard Header Banner with smooth fade in */}
+            <section className="bg-background pt-32 pb-14 sm:pt-40 sm:pb-20 lg:pt-48 lg:pb-28 border-b border-border/40 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-72 h-72 sm:w-96 sm:h-96 bg-primary/10 rounded-full blur-[80px] translate-x-1/2 -translate-y-1/2" />
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     className="relative z-10 container-tight text-center"
                 >
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif text-foreground mb-4 tracking-tight">About Us</h1>
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-serif text-foreground mb-4 tracking-tight">About Us</h1>
                     <div className="w-16 h-1 bg-primary mx-auto rounded-full" />
-                    <p className="mt-8 text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg leading-relaxed font-medium">
+                    <p className="mt-6 sm:mt-8 text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
                         The philosophy and legacy behind Shatayu Yoga—dedicated to physical vitality and mental peace.
                     </p>
                 </motion.div>

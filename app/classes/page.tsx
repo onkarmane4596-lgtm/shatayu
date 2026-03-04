@@ -6,7 +6,7 @@ import { Clock, Users, CalendarDays, ArrowRight, Sunrise, Sunset, Dumbbell, Hear
 import { SITE_CONTACT } from '@/lib/site-config';
 
 const classes = [
-    { id: '01', title: 'Fitness Yoga Batch', icon: Dumbbell, type: 'Dynamic Body Strength', desc: 'An intense sequence designed to build physical strength, flexibility, and cardiovascular endurance.', time: '45 Mins', level: 'Intermediate', img: '/assets/offerings/fitness.png' },
+    { id: '01', title: 'Fitness Yoga Batch', icon: Dumbbell, type: 'Dynamic Body Strength', desc: 'An intense sequence designed to build physical strength, flexibility, and cardiovascular endurance.', time: '45 Mins', level: 'Intermediate', img: '/assets/offerings/1.png' },
     { id: '02', title: 'Therapeutic Yoga Batch', icon: HeartPulse, type: 'Healing & Alignment', desc: 'Tailored sequences for joint mobility, pain relief (back, neck, knees), and postural correction.', time: '60 Mins', level: 'All Levels', img: '/assets/offerings/therapeutic.png' },
     { id: '03', title: "Kid's Yoga Batch", icon: ToyBrick, type: 'Fun & Focus', desc: 'Age-appropriate yoga and mindfulness to build focus, flexibility, and calm in children.', time: '30 Mins', level: 'Kids', img: '/assets/offerings/kids.png' },
     { id: '04', title: "Women's Special Face Yoga Batch", icon: Smile, type: 'Radiance & Rejuvenation', desc: 'Targeted facial exercises for collagen support, jaw release, and natural glow.', time: '20 Mins', level: 'All Levels', img: '/assets/offerings/face.png' },

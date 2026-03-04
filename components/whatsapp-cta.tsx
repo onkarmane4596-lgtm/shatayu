@@ -19,9 +19,9 @@ export function WhatsAppCTA({
   icon = true,
 }: WhatsAppCTAProps) {
   const variants = {
-    default: 'bg-primary hover:bg-primary/90 text-white',
-    outline: 'border-2 border-primary text-primary hover:bg-primary/5',
-    ghost: 'text-primary hover:bg-primary/10',
+    default: 'bg-gradient-to-r from-[#5DA89F] to-[#5EA8E6] text-[#FFFBF2] hover:opacity-90',
+    outline: 'border-2 border-[#5DA89F] text-[#5DA89F] hover:bg-[#5DA89F]/5',
+    ghost: 'text-[#5DA89F] hover:bg-[#5DA89F]/10',
   };
 
   const sizes = {
