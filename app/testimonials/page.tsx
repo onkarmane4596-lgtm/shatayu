@@ -53,7 +53,7 @@ function TestimonialCard({ testimonial, index, isMarquee = false }: { testimonia
             whileInView={isMarquee ? {} : { opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className={`break-inside-avoid ${isMarquee ? 'w-[300px] sm:w-[350px] shrink-0' : 'mb-6'}`}
+            className={`break-inside-avoid ${isMarquee ? 'w-[300px] sm:w-[350px] shrink-0' : 'mb-6 will-change-[transform,opacity]'}`}
         >
             <div className={`bg-background/60 backdrop-blur-md border border-border/40 ${isMarquee ? 'p-5 sm:p-6' : 'p-6 sm:p-8'} rounded-3xl shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-500 group flex flex-col h-full uppercase-none`}>
                 <Quote size={24} className="text-primary/20 mb-3 group-hover:text-primary/40 transition-colors" />
@@ -95,6 +95,7 @@ function TestimonialCard({ testimonial, index, isMarquee = false }: { testimonia
 }
 
 export default function TestimonialsPage() {
+    const [isHovered, setIsHovered] = useState(false);
     const marqueeTestimonials = [...testimonials, ...testimonials];
 
     return (
@@ -107,7 +108,7 @@ export default function TestimonialsPage() {
                 className="absolute -top-[20%] -right-[20%] w-[800px] h-[800px] bg-primary/5 rounded-full blur-[100px] pointer-events-none"
             />
 
-            <section className="bg-background py-12 sm:py-20 lg:py-28 border-b border-border/40 relative z-10">
+            <section className="bg-background pt-32 pb-14 sm:pt-40 sm:pb-20 lg:pt-48 lg:pb-28 border-b border-border/40 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -134,7 +135,13 @@ export default function TestimonialsPage() {
                 </div>
 
                 {/* Mobile: Slow Marquee Scroll */}
-                <div className="md:hidden relative w-full overflow-hidden py-4">
+                <div
+                    className="md:hidden relative w-full overflow-hidden py-4"
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                    onTouchStart={() => setIsHovered(true)}
+                    onTouchEnd={() => setIsHovered(false)}
+                >
                     {/* Gradient Fades for Edge */}
                     <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-secondary/20 to-transparent z-20 pointer-events-none" />
                     <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-secondary/20 to-transparent z-20 pointer-events-none" />
@@ -145,6 +152,10 @@ export default function TestimonialsPage() {
                             duration: 50, // Very slow scroll
                             ease: "linear",
                             repeat: Infinity
+                        }}
+                        style={{
+                            animationPlayState: isHovered ? "paused" : "running",
+                            willChange: "transform"
                         }}
                         className="flex gap-4 px-4 w-fit"
                     >
@@ -169,7 +180,7 @@ export default function TestimonialsPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="relative group lg:max-w-4xl lg:mx-auto"
+                    className="relative group lg:max-w-4xl lg:mx-auto will-change-[transform,opacity]"
                 >
                     {/* Decorative background glow for the CTA card */}
                     <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-primary/5 to-primary/20 rounded-[2.5rem] blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-700" />

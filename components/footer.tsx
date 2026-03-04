@@ -24,9 +24,9 @@ export function Footer() {
                             </span>
                             <div className="flex flex-col">
                                 <span className="text-2xl font-serif font-bold text-white tracking-tight leading-none">
-                                    Shatayu <span className="text-primary font-normal">Yoga</span>
+                                    Shatayu <span className="text-emerald-400 font-normal">Yoga</span>
                                 </span>
-                                <span className="text-[10px] uppercase tracking-[0.3em] text-primary/70 mt-1 font-bold">
+                                <span className="text-[10px] uppercase tracking-[0.3em] text-emerald-400/80 mt-1 font-bold">
                                     {SITE_TAGLINE}
                                 </span>
                             </div>
@@ -48,7 +48,7 @@ export function Footer() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label={social.label}
-                                    className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-primary hover:border-primary/40 hover:bg-primary/10 transition-all duration-300 backdrop-blur-sm"
+                                    className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/80 hover:text-emerald-400 hover:border-emerald-500/40 hover:bg-emerald-500/10 transition-all duration-300 backdrop-blur-sm"
                                 >
                                     <social.icon size={18} />
                                 </a>
@@ -71,8 +71,8 @@ export function Footer() {
                                 { label: 'Contact Us', href: '/contact' },
                             ].map(({ label, href }) => (
                                 <li key={href}>
-                                    <Link href={href} className="group text-sm text-white/80 hover:text-primary transition-colors flex items-center gap-2">
-                                        <ChevronRight className="w-4 h-4 text-primary/40 group-hover:text-primary group-hover:translate-x-1 transition-all duration-300" />
+                                    <Link href={href} className="group text-sm text-white/80 hover:text-emerald-400 transition-colors flex items-center gap-2">
+                                        <ChevronRight className="w-4 h-4 text-white/30 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all duration-300" />
                                         {label}
                                     </Link>
                                 </li>
@@ -89,8 +89,8 @@ export function Footer() {
                         <ul className="space-y-4">
                             {SITE_SERVICES.map((name) => (
                                 <li key={name}>
-                                    <Link href="/classes" className="group text-sm text-white/80 hover:text-primary transition-colors flex items-center gap-2">
-                                        <ChevronRight className="w-4 h-4 text-primary/40 group-hover:text-primary group-hover:translate-x-1 transition-all duration-300" />
+                                    <Link href="/classes" className="group text-sm text-white/80 hover:text-emerald-400 transition-colors flex items-center gap-2">
+                                        <ChevronRight className="w-4 h-4 text-white/30 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all duration-300" />
                                         {name}
                                     </Link>
                                 </li>
@@ -103,27 +103,27 @@ export function Footer() {
                         <div>
                             <h4 className="text-white font-serif text-lg font-bold mb-8 relative inline-block">
                                 Reach Us
-                                <span className="absolute -bottom-2 left-0 w-8 h-[3px] bg-primary rounded-full shadow-[0_0_10px_rgba(var(--primary),0.5)]" />
+                                <span className="absolute -bottom-2 left-0 w-8 h-[3px] bg-emerald-500 rounded-full shadow-[0_0_10px_rgba(16,185,129,0.5)]" />
                             </h4>
                             <ul className="space-y-5">
                                 <li className="flex items-center gap-4 group cursor-pointer">
-                                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary border border-primary/20 transition-all duration-300 group-hover:bg-primary group-hover:text-background group-hover:shadow-[0_0_15px_rgba(var(--primary),0.3)]">
+                                    <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 border border-emerald-500/20 transition-all duration-300 group-hover:bg-emerald-500 group-hover:text-white group-hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
                                         <Phone size={18} />
                                     </div>
-                                    <a href={SITE_CONTACT.telLink} className="text-sm font-bold text-white/95 group-hover:text-primary transition-colors">
+                                    <a href={SITE_CONTACT.telLink} className="text-sm font-bold text-white/95 group-hover:text-emerald-400 transition-colors">
                                         {SITE_CONTACT.phoneFull}
                                     </a>
                                 </li>
                                 <li className="flex items-center gap-4 group cursor-pointer">
-                                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary border border-primary/20 transition-all duration-300 group-hover:bg-primary group-hover:text-background group-hover:shadow-[0_0_15px_rgba(var(--primary),0.3)]">
+                                    <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 border border-emerald-500/20 transition-all duration-300 group-hover:bg-emerald-500 group-hover:text-white group-hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
                                         <Mail size={18} />
                                     </div>
-                                    <a href={SITE_CONTACT.mailtoLink} className="text-sm font-bold text-white/95 group-hover:text-primary transition-colors break-all">
+                                    <a href={SITE_CONTACT.mailtoLink} className="text-sm font-bold text-white/95 group-hover:text-emerald-400 transition-colors break-all">
                                         {SITE_CONTACT.email}
                                     </a>
                                 </li>
                                 <li className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary border border-primary/20 mt-0.5 shrink-0">
+                                    <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 border border-emerald-500/20 mt-0.5 shrink-0">
                                         <MapPin size={18} />
                                     </div>
                                     <span className="text-sm text-white/80 leading-relaxed font-medium">
@@ -134,7 +134,7 @@ export function Footer() {
                         </div>
 
                         <div>
-                            <h4 className="text-white font-serif text-sm font-bold uppercase tracking-[0.2em] mb-6 text-primary/80">
+                            <h4 className="text-white font-serif text-sm font-bold uppercase tracking-[0.2em] mb-6 text-emerald-400/80">
                                 Practice Hours
                             </h4>
                             <ul className="space-y-3 text-xs font-semibold">
@@ -144,7 +144,7 @@ export function Footer() {
                                 </li>
                                 <li className="flex justify-between items-center text-white/60">
                                     <span>Sat — Sun</span>
-                                    <span className="text-primary/90">Morning Only / Closed</span>
+                                    <span className="text-emerald-400/90">Morning Only / Closed</span>
                                 </li>
                             </ul>
                         </div>
@@ -154,7 +154,7 @@ export function Footer() {
                 {/* Bottom Bar */}
                 <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
                     <p className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-white/50">
-                        &copy; {new Date().getFullYear()} Shatayu Yoga • <span className="text-primary/70">Divine Harmony</span>
+                        &copy; {new Date().getFullYear()} Shatayu Yoga • <span className="text-emerald-400/80">Divine Harmony</span>
                     </p>
 
                     <div className="flex items-center gap-6">

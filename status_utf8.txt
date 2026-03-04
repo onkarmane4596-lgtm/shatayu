@@ -1,0 +1,35 @@
+﻿ M app/about/page.tsx
+ M app/classes/page.tsx
+ M app/contact/page.tsx
+ M app/globals.css
+ M app/layout.tsx
+ M app/page.tsx
+ M app/testimonials/page.tsx
+ M components/footer.tsx
+ M components/navbar.tsx
+ M package-lock.json
+ M package.json
+ D public/assets/hero-posed-1.png
+ M public/assets/hero-posed.png
+ D public/assets/hero-shatayu.png
+ D public/assets/main-hero.png
+ M public/assets/offerings/face.png
+ M public/assets/offerings/fitness.png
+ M public/assets/offerings/kids.png
+ M public/assets/offerings/pranayam.png
+ M public/assets/offerings/therapeutic.png
+ D public/assets/pose-1.png
+ D public/assets/pose-2.png
+ D public/assets/pose-3.png
+ D public/assets/pose-lotus.png
+ D public/assets/pose-lunge.png
+?? public/assets/Untitled-1.ai
+?? public/assets/face.png
+?? public/assets/fitness.png
+?? public/assets/kids.png
+?? public/assets/pranayam.png
+?? public/assets/shatayu-1.png
+?? public/assets/textdesk.png
+?? public/assets/therapeutic.png
+?? status.txt
+?? status_utf8.txt

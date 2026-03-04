@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Leaf, Sparkles, Wind, Heart, Smile, MessageCircle, Calendar, Quote, Clock, CheckCircle2, Dumbbell, HeartPulse, ToyBrick } from 'lucide-react';
+import { ArrowRight, Leaf, Sparkles, Wind, Heart, Smile, MessageCircle, Calendar, Quote, Clock, CheckCircle2, Dumbbell, HeartPulse, ToyBrick, Users, Brain, Activity, Award, Star } from 'lucide-react';
 import { SITE_CONTACT } from '@/lib/site-config';
 
 const practices = [
@@ -29,168 +29,188 @@ export default function Home() {
   return (
     <div className="bg-background text-foreground overflow-hidden selection:bg-primary/20 selection:text-primary">
 
-      {/* Premium Hero Section */}
-      <section className="relative min-h-[85vh] flex flex-col items-center justify-start pt-[80px] sm:pt-32 pb-8 overflow-hidden">
-        {/* Abstract atmospheric background glow */}
-        <div className="absolute top-0 inset-x-0 h-full bg-gradient-to-b from-primary/5 via-background to-background -z-10 pointer-events-none" />
-
-        {/* Animated Background Orbs */}
-        <motion.div
-          animate={{ scale: [1, 1.1, 1], rotate: [0, 90, 0] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-[30%] -right-[20%] w-[70vw] max-w-[800px] aspect-square rounded-full bg-gradient-to-bl from-amber-200/20 to-rose-200/20 blur-[120px] -z-10"
-        />
-        <motion.div
-          animate={{ scale: [1, 1.2, 1], rotate: [0, -90, 0] }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="absolute -bottom-[20%] -left-[20%] w-[60vw] max-w-[700px] aspect-square rounded-full bg-gradient-to-tr from-emerald-200/20 to-teal-200/20 blur-[100px] -z-10"
-        />
-
-        <div className="container-tight px-4 sm:px-6 relative z-10 w-full flex flex-col items-center text-center flex-1 max-h-screen">
-
-          {/* Main Text Content */}
-          <div className="max-w-4xl mx-auto pt-0 mb-6 sm:mb-8 relative z-20">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="text-4xl sm:text-6xl md:text-7xl lg:text-[6rem] font-extrabold tracking-tight text-foreground leading-[1] drop-shadow-sm mb-6 sm:mb-8"
-            >
-              Better Health. Every <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-600 to-teal-600 font-serif italic pr-2">Day.</span>
-            </motion.h1>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
-            >
-              <Link
-                href="/classes"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 h-12 sm:h-14 px-8 sm:px-10 text-[15px] sm:text-base font-bold rounded-full bg-foreground text-background hover:bg-primary hover:text-primary-foreground shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:shadow-[0_12px_40px_rgba(0,80,40,0.2)] hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
-              >
-                Join Our Classes
-                <ArrowRight className="w-5 h-5 shrink-0" />
-              </Link>
-              <Link
-                href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 h-12 sm:h-14 px-8 sm:px-10 text-[15px] sm:text-base font-bold rounded-full border-2 border-border/80 text-foreground bg-card/60 backdrop-blur-md hover:bg-primary/5 hover:border-primary/40 hover:-translate-y-1 active:translate-y-0 transition-all duration-300"
-              >
-                Book a Session
-              </Link>
-            </motion.div>
-          </div>
+      {/* Premium Modern Hero Section - Full Fit Redesign */}
+      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+        {/* Full-Bleed Background Image Container */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/assets/hero-posed.png"
+            alt="Yoga practice — balance and mindfulness"
+            fill
+            className="object-cover object-[center_35%] scale-105"
+            priority
+            quality={100}
+          />
+          {/* Dark green overlays matching the theme */}
+          <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/80 via-emerald-900/40 to-transparent z-10" />
+          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-emerald-950/90 via-emerald-900/50 to-transparent z-10" />
+          <div className="absolute inset-0 bg-emerald-950/20 z-10" />
         </div>
 
-        {/* Full-Bleed Image Container - Placed outside the padded container-tight */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full relative z-0 flex-1 min-h-0 flex items-end justify-center -mt-20 sm:-mt-32 md:-mt-48 lg:-mt-64"
-        >
-          {/* Creative Massive Foreground Typography (Shatayu Marquee) - Floating BEHIND the image and text */}
-          <div className="absolute top-[18%] sm:top-[10%] md:top-[15%] w-full overflow-hidden flex items-center z-0 pointer-events-none select-none my-auto mix-blend-overlay">
-            <motion.div
-              initial={{ x: 0, opacity: 0 }}
-              animate={{ x: "-50%", opacity: 1 }}
-              transition={{
-                x: { duration: 40, repeat: Infinity, ease: "linear" },
-                opacity: { duration: 1.5, delay: 0.4, ease: "easeOut" }
-              }}
-              className="flex whitespace-nowrap"
-            >
-              <h2 className="text-[28vw] md:text-[20vw] lg:text-[22vw] xl:text-[300px] font-black uppercase tracking-[0.25em] pl-[0.25em] pr-32 text-transparent [-webkit-text-stroke:2px_rgba(255,255,255,0.6)] dark:[-webkit-text-stroke:2px_rgba(255,255,255,0.3)] drop-shadow-lg leading-none">
-                Shatayu
-              </h2>
-              <h2 className="text-[28vw] md:text-[20vw] lg:text-[22vw] xl:text-[300px] font-black uppercase tracking-[0.25em] pl-[0.25em] pr-32 text-transparent [-webkit-text-stroke:2px_rgba(255,255,255,0.6)] dark:[-webkit-text-stroke:2px_rgba(255,255,255,0.3)] drop-shadow-lg leading-none">
-                Shatayu
-              </h2>
-            </motion.div>
-          </div>
+        {/* Floating Typography (Shatayu Marquee) - Integrated behind content */}
+        <div className="absolute top-[45%] -translate-y-1/2 w-full overflow-hidden flex items-center z-10 pointer-events-none select-none mix-blend-soft-light opacity-20">
+          <motion.div
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+            className="flex whitespace-nowrap will-change-transform"
+          >
+            <h2 className="text-[25vw] font-black uppercase tracking-[0.2em] text-transparent [-webkit-text-stroke:1px_white] px-10">
+              Shatayu
+            </h2>
+            <h2 className="text-[25vw] font-black uppercase tracking-[0.2em] text-transparent [-webkit-text-stroke:1px_white] px-10">
+              Shatayu
+            </h2>
+          </motion.div>
+        </div>
 
-          {/* The Hero Image (Mobile Specific - Modern & Floating) */}
-          <div className="relative w-full h-[45vh] sm:h-[50vh] max-h-[500px] flex items-end justify-center z-10 md:hidden pb-4">
-            {/* Elegant Divine Aura (Pulsating Glow) */}
-            <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 w-[70vw] h-[70vw] rounded-full bg-gradient-to-tr from-primary/30 via-amber-500/10 to-transparent blur-3xl animate-[pulse_6s_ease-in-out_infinite]" />
-
-            <motion.div
-              animate={{ y: [-8, 8, -8] }}
-              transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}
-              className="relative w-[95%] sm:w-[85%] h-full z-10"
-            >
+        {/* Desktop-Only Hero Content (Hidden on Mobile) */}
+        <div className="container relative z-20 px-4 hidden sm:flex flex-col items-center justify-end h-full min-h-screen text-center pb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full max-w-5xl mx-auto will-change-[transform,opacity]"
+          >
+            {/* Ultra-Modern Heading - Image Replacement */}
+            <motion.div className="mb-6 flex flex-col items-center mx-auto w-full max-w-[900px]">
               <Image
-                src="/assets/hero-mobile.png"
-                alt="Yoga practice — balance and mindfulness"
-                fill
-                className="object-contain object-bottom drop-shadow-[0_20px_40px_rgba(0,0,0,0.25)] pointer-events-none"
+                src="/assets/textdesk.png"
+                alt="योग – शरीर आणि मनाचा सुंदर संगम"
+                width={1200}
+                height={400}
+                className="w-full h-auto object-contain drop-shadow-2xl"
                 priority
-                sizes="(max-width: 768px) 100vw, 0vw"
               />
             </motion.div>
-          </div>
 
-          {/* The Hero Image (Desktop Original - Edge to Edge) */}
-          <div className="relative w-full h-[55vh] md:h-[60vh] lg:h-[70vh] max-h-[900px] flex items-end justify-center z-10 hidden md:flex">
-            <Image
-              src="/assets/hero-posed-1.png"
-              alt="Yoga practice — balance and mindfulness"
-              fill
-              className="object-contain object-bottom drop-shadow-[0_40px_80px_rgba(0,0,0,0.3)] hover:scale-[1.03] transition-transform duration-[2000ms] ease-out"
-              priority
-              sizes="100vw"
-              quality={100}
-            />
-          </div>
-
-          {/* Seamless Bottom Edge Gradient */}
-          <div className="absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-t from-background/95 via-background/40 to-transparent z-20 pointer-events-none opacity-90" />
-
-          {/* Decorative Zen Circles */}
-          <div className="absolute top-[40%] md:top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center z-0 pointer-events-none opacity-40 mix-blend-overlay">
-            <div className="absolute w-[250px] md:w-[500px] lg:w-[700px] aspect-square rounded-full border-[1.5px] border-primary/30 border-dashed animate-[spin_40s_linear_infinite]" />
-            <div className="absolute w-[350px] md:w-[700px] lg:w-[950px] aspect-square rounded-full border-[1px] border-emerald-500/20 border-solid animate-[spin_60s_linear_infinite_reverse]" />
-          </div>
-
-          {/* Trust & Social Proof Badges - Prominently Displayed (Constrained to container width invisibly) */}
-          <div className="absolute inset-0 max-w-[1400px] mx-auto w-full pointer-events-none z-40 hidden md:block">
-            <motion.div
-              animate={{ y: [-8, 8, -8] }}
-              transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}
-              className="absolute bottom-12 left-8 lg:left-16 pointer-events-auto bg-card/95 backdrop-blur-xl border border-white/20 shadow-[0_12px_40px_rgb(0,0,0,0.15)] rounded-2xl p-4 flex items-center gap-4"
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 1 }}
+              className="text-base sm:text-[19px] text-white/90 max-w-xl mx-auto mt-7 mb-10 font-medium leading-relaxed drop-shadow-md"
             >
-              <div className="flex -space-x-3 isolate">
-                {['/assets/pose-lunge.png', '/assets/pose-lotus.png', '/assets/pose-meditation.png'].map((src, i) => (
-                  <div key={i} className="w-10 h-10 rounded-full border-2 border-background bg-secondary overflow-hidden shrink-0 relative flex items-center justify-center">
-                    <Image src={src} fill alt="Student" className="object-cover !scale-125 pt-2 opacity-90 mix-blend-multiply" sizes="40px" />
+              घरबसल्या मिळवा उत्तम आरोग्य – आजच माझ्या क्लासला जॉईन व्हा!
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="mt-8 flex flex-col items-center justify-center gap-4 px-4 w-full"
+            >
+              {/* Main Single CTA Button */}
+              <a
+                href={SITE_CONTACT.getWhatsAppLink("Hello, I am interested in joining Shatayu Yoga classes. Please provide the batch details and schedule.")}
+                className="group relative overflow-hidden rounded-full p-[1.5px] focus:outline-none"
+              >
+                <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#10b981_0%,#ffffff_50%,#10b981_100%)]" />
+                <span className="inline-flex h-12 sm:h-14 w-64 sm:w-72 cursor-pointer items-center justify-center rounded-full bg-slate-950 px-6 py-1 text-sm sm:text-base font-bold text-white backdrop-blur-3xl transition-all group-hover:bg-slate-900 active:scale-95">
+                  Join Now
+                  <ArrowRight className="ml-2 w-4 sm:w-5 h-4 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </a>
+
+              <div className="flex items-center gap-4 mt-6">
+
+                {/* Trust Badges - Integrated in same line */}
+                <div className="flex-shrink-0 flex items-center gap-3 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-2xl p-2.5 sm:p-3 shadow-2xl">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center">
+                    <Award className="w-4 sm:w-5 h-4 sm:h-5 text-emerald-400" />
                   </div>
-                ))}
-                <div className="w-10 h-10 rounded-full border-2 border-background bg-primary text-primary-foreground flex items-center justify-center font-bold text-xs z-10">4+</div>
-              </div>
-              <div className="text-left">
-                <div className="flex text-amber-500 mb-0.5" aria-label="5 stars">
-                  {[1, 2, 3, 4, 5].map((s) => (
-                    <svg key={s} className="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                  ))}
+                  <div className="text-left">
+                    <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-emerald-400 font-bold">Expert Led</p>
+                    <p className="text-xs sm:text-sm font-bold text-white leading-none mt-1">AYUSH Certified</p>
+                  </div>
                 </div>
-                <p className="text-xs font-semibold text-foreground">Years of Expertise</p>
+
+                <div className="flex-shrink-0 flex items-center gap-3 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-2xl p-2.5 sm:p-3 shadow-2xl">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-amber-500/20 flex items-center justify-center">
+                    <Star className="w-4 sm:w-5 h-4 sm:h-5 text-amber-400" />
+                  </div>
+                  <div className="text-left">
+                    <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-amber-400 font-bold">Experience</p>
+                    <p className="text-xs sm:text-sm font-bold text-white leading-none mt-1">4+ Years Expert</p>
+                  </div>
+                </div>
               </div>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Mobile-Only Hero Content (Hidden on Desktop) */}
+        <div className="container relative z-20 px-4 flex sm:hidden flex-col items-center justify-center min-h-[60svh] text-center pb-10 pt-20 top-navbar z-30 -mt-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full relative flex flex-col items-center bg-background/5 backdrop-blur-md rounded-[2rem] p-5 sm:p-6 border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)] will-change-[transform,opacity]"
+          >
+            {/* Mobile-Optimized Heading */}
+            <motion.div className="mb-3 w-full">
+              <Image
+                src="/assets/textdesk.png"
+                alt="योग – शरीर आणि मनाचा सुंदर संगम"
+                width={800}
+                height={300}
+                className="w-full h-auto object-contain drop-shadow-xl"
+                priority
+              />
             </motion.div>
 
-            <motion.div
-              animate={{ y: [8, -8, 8] }}
-              transition={{ duration: 7, ease: "easeInOut", repeat: Infinity, delay: 1 }}
-              className="absolute top-12 right-8 lg:right-16 pointer-events-auto bg-card/95 backdrop-blur-xl border border-white/20 shadow-[0_12px_40px_rgb(0,0,0,0.15)] rounded-2xl p-4 flex items-center gap-4"
+            <motion.p
+              className="text-[14px] text-white/95 max-w-[280px] mx-auto mb-8 font-medium leading-relaxed drop-shadow-md"
             >
-              <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center shrink-0">
-                <Wind className="w-6 h-6 text-emerald-600" />
+              घरबसल्या मिळवा उत्तम आरोग्य – आजच माझ्या क्लासला जॉईन व्हा!
+            </motion.p>
+
+            {/* Vertical Stacking for CTA Buttons */}
+            <div className="flex flex-col items-center w-full gap-4">
+              <a
+                href={SITE_CONTACT.getWhatsAppLink("Hello, I am interested in joining Shatayu Yoga classes. Please provide the batch details and schedule.")}
+                className="group relative overflow-hidden rounded-2xl focus:outline-none w-full shadow-lg"
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-white to-emerald-500" />
+                <span className="absolute inset-[1px] bg-slate-950 rounded-[15px]" />
+                <span className="relative h-14 w-full cursor-pointer flex items-center justify-center rounded-2xl bg-transparent px-6 py-1 text-sm font-bold text-white transition-all active:scale-[0.98]">
+                  Join Now
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </span>
+              </a>
+            </div>
+
+            {/* Trust Badges - Grid Layout for Mobile */}
+            <div className="grid grid-cols-2 gap-3 w-full mt-5">
+              <div className="flex flex-col items-center justify-center gap-1.5 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-3 shadow-md">
+                <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center mb-0.5">
+                  <Award className="w-4 h-4 text-emerald-400" />
+                </div>
+                <div className="text-center">
+                  <p className="text-[8px] uppercase tracking-widest text-emerald-400 font-bold mb-0.5">Expert Led</p>
+                  <p className="text-[10px] font-bold text-white leading-tight">AYUSH Certified</p>
+                </div>
               </div>
-              <div className="text-left pr-2">
-                <h4 className="text-sm font-bold text-foreground leading-tight">Live Classes</h4>
-                <p className="text-xs text-muted-foreground mt-0.5">Join from anywhere</p>
+
+              <div className="flex flex-col items-center justify-center gap-1.5 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-3 shadow-md">
+                <div className="w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center mb-0.5">
+                  <Star className="w-4 h-4 text-amber-400" />
+                </div>
+                <div className="text-center">
+                  <p className="text-[8px] uppercase tracking-widest text-amber-400 font-bold mb-0.5">Experience</p>
+                  <p className="text-[10px] font-bold text-white leading-tight">4+ Years Expert</p>
+                </div>
               </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
+        </div>
+
+
+        {/* Artistic Zen Scroll Indicator */}
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-30 opacity-40 shrink-0"
+        >
+          <div className="w-[1px] h-8 sm:h-12 bg-gradient-to-b from-white to-transparent" />
         </motion.div>
       </section>
 
@@ -199,7 +219,7 @@ export default function Home() {
         <div className="container-tight">
           <div className="flex items-center justify-between gap-4 mb-5">
             <h2 className="text-sm font-bold uppercase tracking-[0.15em] text-foreground">
-              What we offer
+              Our Yoga Classes
             </h2>
             <Link href="/classes" className="text-xs font-bold text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1">
               All classes <ArrowRight className="w-3.5 h-3.5" />
@@ -228,7 +248,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: i * 0.05 }}
-                className="flex-shrink-0 w-[calc(50vw-1.5rem)] min-w-[140px] sm:w-auto sm:min-w-0 group"
+                className="flex-shrink-0 w-[calc(50vw-1.5rem)] min-w-[140px] sm:w-auto sm:min-w-0 group will-change-[transform,opacity]"
               >
                 <Link
                   href="/classes"
@@ -276,124 +296,116 @@ export default function Home() {
         </div>
       </section >
 
-      {/* Creative Instructor Typographic Feature Section */}
+      {/* Creative Instructor Typographic Feature Section & Testimonials */}
       <section className="py-20 overflow-hidden relative">
         <div className="absolute top-0 inset-x-0 w-full h-[150%] bg-gradient-to-b from-primary/5 via-transparent to-primary/5 -z-10 blur-3xl" />
         <div className="container-tight relative z-10 px-4">
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-3xl mx-auto rounded-[2.5rem] bg-background/60 backdrop-blur-2xl border border-primary/20 shadow-[0_10px_40px_rgba(0,0,0,0.06)] p-8 lg:p-12 relative overflow-hidden text-center"
-          >
-            {/* Elegant Background Accents */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+          <div className="grid lg:grid-cols-5 gap-10 items-center">
+            {/* Left side: Instructor Profile (takes up 3 columns on large screens) */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="lg:col-span-3 rounded-[2.5rem] bg-background/60 backdrop-blur-2xl border border-primary/20 shadow-[0_10px_40px_rgba(0,0,0,0.06)] p-8 lg:p-12 relative overflow-hidden text-center h-full flex flex-col justify-center will-change-[transform,opacity]"
+            >
+              {/* Elegant Background Accents */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
-            {/* Floating Quote Icon */}
-            <div className="w-14 h-14 mx-auto rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/10 flex items-center justify-center text-primary shadow-md mb-8 relative z-10 backdrop-blur-md hover:rotate-6 hover:scale-110 transition-transform duration-500">
-              <Quote className="w-6 h-6 -translate-y-0.5 translate-x-0.5" />
-            </div>
+              {/* Floating Quote Icon */}
+              <div className="w-14 h-14 mx-auto rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/10 flex items-center justify-center text-primary shadow-md mb-8 relative z-10 backdrop-blur-md hover:rotate-6 hover:scale-110 transition-transform duration-500">
+                <Quote className="w-6 h-6 -translate-y-0.5 translate-x-0.5" />
+              </div>
 
-            <h2 className="text-xl sm:text-2xl md:text-[28px] font-medium text-foreground leading-[1.4] text-balance mb-10 italic relative z-10 px-4 md:px-10">
-              <span className="absolute -top-6 left-0 text-[80px] font-serif text-primary/10 pointer-events-none select-none hidden sm:block">"</span>
-              मी आयुष मान्यताप्राप्त प्रमाणित योग शिक्षक, गेली 4 वर्षे ऑनलाईन योगा क्लासेस घेते आहे.
-              <span className="absolute -bottom-16 right-0 text-[80px] font-serif text-primary/10 pointer-events-none select-none hidden sm:block">"</span>
-            </h2>
+              <h2 className="text-xl sm:text-2xl md:text-[28px] font-medium text-foreground leading-[1.4] text-balance mb-10 italic relative z-10 px-4 md:px-10">
+                <span className="absolute -top-6 left-0 text-[80px] font-serif text-primary/10 pointer-events-none select-none hidden sm:block">"</span>
+                मी आयुष मान्यताप्राप्त प्रमाणित योग शिक्षक, गेली 4 वर्षे ऑनलाईन योगा क्लासेस घेते आहे.
+                <span className="absolute -bottom-16 right-0 text-[80px] font-serif text-primary/10 pointer-events-none select-none hidden sm:block">"</span>
+              </h2>
 
-            <div className="flex flex-col items-center relative z-10">
-              <div className="w-16 h-1 bg-gradient-to-r from-transparent via-primary/60 to-transparent rounded-full mb-5" />
-              <h3 className="text-lg sm:text-xl font-bold text-foreground">
-                Shubhangi Ghule
-              </h3>
-              <p className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-[0.2em] mt-1 dark:text-amber-400">
-                Shatayu Yoga Classes
-              </p>
+              <div className="flex flex-col items-center relative z-10 mt-auto">
+                <div className="w-16 h-1 bg-gradient-to-r from-transparent via-primary/60 to-transparent rounded-full mb-5" />
+                <h3 className="text-lg sm:text-xl font-bold text-foreground">
+                  Shubhangi Ghule
+                </h3>
+                <p className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-[0.2em] mt-1 dark:text-amber-400">
+                  Shatayu Yoga Classes
+                </p>
 
-              {/* Credentials Pills */}
-              <div className="flex flex-wrap gap-2.5 mt-6 justify-center">
-                <div className="px-3.5 py-1.5 rounded-full border border-border/80 bg-foreground/5 backdrop-blur-sm text-xs font-bold text-foreground shadow-sm flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                  AYUSH Certified
-                </div>
-                <div className="px-3.5 py-1.5 rounded-full border border-border/80 bg-foreground/5 backdrop-blur-sm text-xs font-bold text-foreground shadow-sm flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
-                  4+ Years Online Expert
+                {/* Credentials Pills */}
+                <div className="flex flex-wrap gap-2.5 mt-6 justify-center">
+                  <div className="px-3.5 py-1.5 rounded-full border border-border/80 bg-foreground/5 backdrop-blur-sm text-xs font-bold text-foreground shadow-sm flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                    AYUSH Certified
+                  </div>
+                  <div className="px-3.5 py-1.5 rounded-full border border-border/80 bg-foreground/5 backdrop-blur-sm text-xs font-bold text-foreground shadow-sm flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                    4+ Years Experience
+                  </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+            </motion.div>
 
-      {/* Featured classes — 2 Premium Cards */}
-      <section className="py-12 sm:py-16 bg-foreground text-background relative overflow-hidden">
-        {/* Subtle background glow */}
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
+            {/* Right side: Student Testimonials (takes up 2 columns on large screens) */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              className="lg:col-span-2 flex flex-col gap-6 will-change-[transform,opacity]"
+            >
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="text-lg font-bold font-serif text-foreground flex items-center gap-2">
+                  <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                  Student Stories
+                </h3>
+                <Link href="/testimonials" className="text-xs font-bold text-primary hover:underline flex items-center gap-1 group">
+                  View all <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
 
-        <div className="container-tight relative z-10">
-          <div className="flex items-center gap-4 mb-8">
-            <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-primary">
-              Popular Classes
-            </h2>
-            <div className="h-px bg-gradient-to-r from-primary/40 to-transparent flex-1" />
-          </div>
-
-          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
-            {featured.map((cls, i) => (
-              <motion.div
-                key={cls.title}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-              >
-                <a
-                  href={SITE_CONTACT.getWhatsAppLink(`Hi! I'm interested in the ${cls.title}. Please share the details and how to join.`)}
-                  className="group flex rounded-[2rem] overflow-hidden border border-white/10 bg-white/[0.03] hover:bg-white/[0.08] hover:border-primary/30 transition-all duration-500 shadow-lg hover:shadow-primary/5 relative cursor-pointer block"
-                >
-                  {/* Hover Accent Line */}
-                  <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                  <div className="relative w-32 sm:w-40 h-40 sm:h-52 flex-shrink-0 bg-black/20 overflow-hidden">
-                    <Image
-                      src={cls.img}
-                      alt={cls.title}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                      sizes="(max-width: 640px) 128px, 160px"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent to-background/20 mix-blend-multiply pointer-events-none" />
+              {/* Testimonial 1 - Compact */}
+              <div className="bg-background/80 backdrop-blur-md border border-border/40 p-6 rounded-3xl shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300">
+                <Quote size={16} className="text-primary/30 mb-2" />
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4 italic line-clamp-4">
+                  "Shubhangi's classes transformed my life! My stress levels dropped significantly, and I feel so much more energetic. The personalized attention makes all the difference."
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center text-primary font-bold text-sm shrink-0">
+                    P
                   </div>
-
-                  <div className="flex flex-col justify-center p-4 sm:p-6 min-w-0 flex-1 relative">
-                    <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-primary mb-1 block">
-                      {cls.tag}
-                    </span>
-                    <p className="text-base sm:text-xl font-bold text-white truncate mb-1.5 group-hover:text-primary transition-colors duration-300">
-                      {cls.title}
-                    </p>
-                    <p className="text-xs sm:text-sm text-white/80 truncate mb-4 font-medium flex items-center gap-1.5">
-                      <Clock className="w-3.5 h-3.5 opacity-80" />
-                      {cls.time}
-                    </p>
-
-                    {/* Animated Button Pill */}
-                    <div className="mt-auto flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white/90 group-hover:text-primary transition-colors duration-300">
-                      <span>Inquire Now</span>
-                      <div className="w-6 h-6 rounded-full bg-white/10 border border-white/20 flex items-center justify-center group-hover:bg-primary/20 group-hover:border-primary/30 group-hover:translate-x-1 transition-all duration-300">
-                        <ArrowRight className="w-3 h-3 text-current" />
-                      </div>
-                    </div>
+                  <div>
+                    <h4 className="text-foreground font-bold text-sm">Priya Sharma</h4>
+                    <p className="text-primary/70 text-[10px] uppercase font-bold">Student</p>
                   </div>
-                </a>
-              </motion.div>
-            ))}
+                </div>
+              </div>
+
+              {/* Testimonial 2 - Compact Marathi */}
+              <div className="bg-gradient-to-br from-primary/5 to-transparent border border-primary/20 p-6 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300">
+                <Quote size={16} className="text-primary/40 mb-2" />
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4 font-medium line-clamp-4">
+                  "थोडे ध्यान घेतात.. प्राणायाम घेतात. योग निद्रा घेतात.. सर्वच खूप छान शिकवतात.. पूर्ण एक तासात बरोबर सर्व पूर्ण करतात..."
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-background border border-primary/20 rounded-lg flex items-center justify-center text-primary font-bold text-sm shrink-0">
+                    A
+                  </div>
+                  <div>
+                    <h4 className="text-foreground font-bold text-sm">Anita Jadhav</h4>
+                    <p className="text-primary/70 text-[10px] uppercase font-bold">Student</p>
+                  </div>
+                </div>
+              </div>
+
+            </motion.div>
           </div>
         </div>
       </section>
+
+
 
       {/* CTA — Premium Zen Footer Call-to-Action */}
       <section className="py-20 sm:py-28 relative overflow-hidden bg-secondary/20">
@@ -414,7 +426,7 @@ export default function Home() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-3xl mx-auto rounded-[3.5rem] bg-background/40 backdrop-blur-3xl border border-primary/10 shadow-[0_30px_100px_rgba(0,0,0,0.08)] p-10 sm:p-20 text-center relative overflow-hidden group"
+            className="max-w-3xl mx-auto rounded-[3.5rem] bg-background/40 backdrop-blur-3xl border border-primary/10 shadow-[0_30px_100px_rgba(0,0,0,0.08)] p-10 sm:p-20 text-center relative overflow-hidden group will-change-[transform,opacity,scale]"
           >
             {/* Inner Interactive Light */}
             <div className="absolute -top-[50%] -left-[50%] w-full h-full bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-[100px] group-hover:translate-x-10 group-hover:translate-y-10 transition-transform duration-1000" />
@@ -500,10 +512,10 @@ export default function Home() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left mb-16">
 
               {[
-                "Simple and effective yoga postures for all age groups",
-                "Stress-free living through Pranayama and meditation",
-                "Special guidance for weight management and improved flexibility"
-              ].map((text, i) => (
+                { text: "सर्व वयोगटांसाठी सोपे आणि प्रभावी योगासन", icon: Users },
+                { text: "प्राणायाम व ध्यानाने ताणमुक्त जीवन", icon: Brain },
+                { text: "वजन नियंत्रण आणि लवचिक शरीर", icon: Activity }
+              ].map((item, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
@@ -514,10 +526,10 @@ export default function Home() {
                 >
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <CheckCircle2 className="w-5 h-5 text-primary" />
+                      <item.icon className="w-5 h-5 text-primary" />
                     </div>
                     <p className="text-sm sm:text-base font-medium text-foreground leading-relaxed">
-                      {text}
+                      {item.text}
                     </p>
                   </div>
                 </motion.div>
@@ -526,20 +538,25 @@ export default function Home() {
             </div>
 
             {/* Strong CTA Button */}
-            <motion.a
-              href={SITE_CONTACT.getWhatsAppLink(
-                "Namaste! I want to join your online yoga classes. Please share batch details."
-              )}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              className="relative inline-flex items-center justify-center gap-3 px-10 h-14 rounded-full text-base font-bold text-white overflow-hidden group"
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-primary via-emerald-500 to-teal-500 animate-[pulse_4s_ease-in-out_infinite]" />
-              <span className="relative z-10 flex items-center gap-2">
-                Get the best health from home – Join my class today!
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </span>
-            </motion.a>
+            <div className="flex flex-col items-center gap-4 mt-8">
+              <p className="text-lg sm:text-xl font-medium text-foreground">
+                Get the best health from home
+              </p>
+              <motion.a
+                href={SITE_CONTACT.getWhatsAppLink(
+                  "Namaste! I want to join your online yoga classes. Please share batch details."
+                )}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
+                className="relative inline-flex items-center justify-center gap-3 px-10 h-14 rounded-full text-base font-bold text-white overflow-hidden group"
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-primary via-emerald-500 to-teal-500 animate-[pulse_4s_ease-in-out_infinite]" />
+                <span className="relative z-10 flex items-center gap-2">
+                  Join my class today!
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </span>
+              </motion.a>
+            </div>
 
           </motion.div>
         </div>

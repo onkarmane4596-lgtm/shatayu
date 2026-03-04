@@ -36,12 +36,12 @@ export default function ContactPage() {
             {/* Decorative background elements */}
             <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
-            <section className="bg-background py-14 sm:py-20 lg:py-28 border-b border-border/40 relative z-10 shadow-sm">
+            <section className="bg-background pt-24 pb-12 sm:pt-40 sm:pb-20 lg:pt-48 lg:pb-28 border-b border-border/40 relative z-10 shadow-sm">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="container-tight text-center"
+                    className="container-tight text-center px-4"
                 >
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-serif text-foreground mb-4 tracking-tight">Contact Us</h1>
                     <div className="w-16 h-1 bg-primary mx-auto rounded-full" />
@@ -51,15 +51,15 @@ export default function ContactPage() {
                 </motion.div>
             </section>
 
-            <section className="container-tight py-16 sm:py-20 lg:py-24 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+            <section className="container-tight px-4 sm:px-6 py-12 sm:py-20 lg:py-24 relative z-10">
+                <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
 
                     {/* Detailed Info Contact Block */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="space-y-12"
+                        className="space-y-8 sm:space-y-12 will-change-[transform,opacity]"
                     >
                         <div>
                             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-serif text-foreground mb-4 sm:mb-6 tracking-tight">Get in Touch</h2>
@@ -79,18 +79,18 @@ export default function ContactPage() {
                                     key={idx}
                                     whileHover={{ x: 10 }}
                                     transition={{ type: "spring", stiffness: 300 }}
-                                    className="group flex gap-4 sm:gap-6 items-center p-5 sm:p-6 bg-background border border-border/40 rounded-2xl sm:rounded-3xl shadow-sm hover:shadow-md hover:border-border transition-all duration-300"
+                                    className="group flex gap-3 sm:gap-6 items-start sm:items-center p-4 sm:p-6 bg-background border border-border/40 rounded-2xl sm:rounded-3xl shadow-sm hover:shadow-md hover:border-border transition-all duration-300 will-change-transform"
                                 >
-                                    <div className="w-14 h-14 bg-secondary/50 rounded-full flex items-center justify-center shrink-0 shadow-inner group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
-                                        <info.icon size={24} className={idx < 2 || true ? "text-primary group-hover:text-primary-foreground transition-colors" : ""} />
+                                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-secondary/50 rounded-full flex items-center justify-center shrink-0 shadow-inner group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                                        <info.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary group-hover:text-primary-foreground transition-colors" />
                                     </div>
-                                    <div>
-                                        <h4 className="text-foreground font-bold font-serif mb-1.5 text-lg">{info.title}</h4>
-                                        <p className="text-muted-foreground text-sm mb-2">{info.desc}</p>
+                                    <div className="flex-1 min-w-0">
+                                        <h4 className="text-foreground font-bold font-serif mb-1 sm:mb-1.5 text-base sm:text-lg truncate">{info.title}</h4>
+                                        <p className="text-muted-foreground text-xs sm:text-sm mb-1 sm:mb-2 line-clamp-2">{info.desc}</p>
                                         {info.link ? (
-                                            <a href={info.link} className="text-primary font-bold hover:underline" target={info.link.startsWith('http') ? '_blank' : undefined} rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}>{info.linkText}</a>
+                                            <a href={info.link} className="text-primary font-bold hover:underline text-sm break-all" target={info.link.startsWith('http') ? '_blank' : undefined} rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}>{info.linkText}</a>
                                         ) : (
-                                            <span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">{info.badge}</span>
+                                            <span className="inline-block bg-primary/10 text-primary px-2.5 py-1 sm:px-3 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider leading-tight">{info.badge}</span>
                                         )}
                                     </div>
                                 </motion.div>
@@ -103,7 +103,7 @@ export default function ContactPage() {
                         initial={{ opacity: 0, scale: 0.95, y: 30 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="bg-background border border-border/40 p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-500 relative overflow-hidden"
+                        className="bg-background border border-border/40 p-5 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-500 relative overflow-hidden will-change-[transform,opacity,scale] mt-4 lg:mt-0"
                     >
                         {/* Soft inner glow on the form card */}
                         <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-primary/30 via-primary to-primary/30 opacity-50" />

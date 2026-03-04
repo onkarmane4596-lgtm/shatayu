@@ -2,6 +2,7 @@
 
 import { Award, Heart, ShieldCheck, Sprout, Sparkles, Target, Zap, Waves } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { SITE_CONTACT } from '@/lib/site-config';
 
 export default function AboutPage() {
     const { scrollYProgress } = useScroll();
@@ -12,7 +13,7 @@ export default function AboutPage() {
         <div className="bg-background pb-32 overflow-hidden selection:bg-primary/20 selection:text-primary">
 
             {/* Standard Header Banner */}
-            <section className="bg-secondary/30 py-14 sm:py-20 lg:py-28 border-b border-border/40 relative overflow-hidden">
+            <section className="bg-secondary/30 pt-32 pb-14 sm:pt-40 sm:pb-20 lg:pt-48 lg:pb-28 border-b border-border/40 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-72 h-72 sm:w-96 sm:h-96 bg-primary/10 rounded-full blur-[80px] -translate-x-1/2 -translate-y-1/2" />
                 <div className="absolute bottom-0 right-0 w-72 h-72 sm:w-96 sm:h-96 bg-primary/10 rounded-full blur-[80px] translate-x-1/3 translate-y-1/3" />
                 <motion.div
@@ -39,7 +40,7 @@ export default function AboutPage() {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="md:col-span-2 lg:col-span-2 bg-secondary/30 rounded-[3rem] p-10 sm:p-16 border border-border/40 relative overflow-hidden group"
+                        className="md:col-span-2 lg:col-span-2 bg-secondary/30 rounded-[3rem] p-10 sm:p-16 border border-border/40 relative overflow-hidden group will-change-[transform,opacity]"
                     >
                         <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
                             <Zap size={200} className="text-primary" />
@@ -132,29 +133,44 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Final Brand Message Block */}
-            <section className="py-24 sm:py-32 container-tight">
+            {/* Final Brand Message Block - Creative Redesign */}
+            <section className="py-20 sm:py-32 container-tight">
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    className="bg-primary/5 border border-primary/20 rounded-[3rem] p-12 sm:p-20 text-center relative overflow-hidden"
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="bg-[#f2f1e8] rounded-[3rem] p-12 sm:p-20 text-center relative overflow-hidden border border-border/10 shadow-[0_20px_50px_rgba(45,74,54,0.08)] group will-change-[transform,opacity,scale]"
                 >
-                    <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_bottom_left,rgba(var(--primary-rgb),0.05)_0%,transparent_50%)]" />
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-foreground mb-8 tracking-tight leading-tight relative z-10">
-                        Join us in our pursuit of <br />
-                        <span className="italic text-primary">lasting vitality.</span>
+                    {/* Artistic Background Elements */}
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-[#e8e6d9] rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:scale-110 transition-transform duration-700" />
+                    <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#e8e6d9] rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 group-hover:scale-110 transition-transform duration-700" />
+
+                    <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-[#2d4a36] tracking-tight leading-[1.15] relative z-10 mx-auto max-w-4xl mb-8">
+                        तुमचा आरोग्यदायी शरीराचा प्रवास <br className="hidden sm:block" />
+                        <span className="relative inline-block mt-2">
+                            <span className="relative z-10 italic">आजच सुरू करा!</span>
+                            <span className="absolute -bottom-2 sm:-bottom-3 left-0 right-0 h-3 sm:h-4 bg-[#41947b]/20 -z-0 -rotate-1" />
+                        </span>
                     </h2>
-                    <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-12 relative z-10 leading-relaxed">
-                        Whether you are beginning your journey or deepening your practice, Shatayu Yoga provides the tools and guidance to help you thrive.
+
+                    <p className="text-[#59695f] text-lg sm:text-xl max-w-2xl mx-auto mb-12 relative z-10 leading-relaxed font-medium">
+                        आता वाट कसली पाहताय? रोज फक्त १ तास स्वतःसाठी द्या आणि अनुभवा शरीरातला तो ऊर्जावान बदल. घरबसल्या मिळवा सर्वोत्तम आरोग्य. आजच माझ्या क्लासला जॉईन व्हा!
                     </p>
-                    <a
-                        href="/contact"
-                        className="relative z-10 inline-flex items-center gap-3 px-10 py-5 bg-foreground text-background rounded-full font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-xl"
-                    >
-                        Connect With Us
-                        <Award size={20} className="text-primary" />
-                    </a>
+
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6 relative z-10">
+                        <a
+                            href={SITE_CONTACT.getWhatsAppLink("नमस्कार शुभांगी मॅडम! मला तुमच्या योगा क्लासबद्दल माहिती हवी आहे. मी जॉईन कसा करू शकतो?")}
+                            className="group/btn relative overflow-hidden inline-flex items-center gap-3 px-10 py-5 bg-[#2d4a36] text-white rounded-full font-bold text-lg hover:shadow-[0_10px_30px_rgba(45,74,54,0.3)] active:scale-95 transition-all duration-300 w-full sm:w-auto justify-center"
+                        >
+                            <span className="absolute inset-0 bg-[#41947b] translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300 ease-in-out" />
+                            <span className="relative z-10">आजच सुरु करा</span>
+                            <Award size={22} className="relative z-10 text-[#f2f1e8] group-hover/btn:rotate-12 transition-transform duration-300" />
+                        </a>
+                        <span className="text-sm font-bold uppercase tracking-[0.2em] text-[#41947b] opacity-80">
+                            100% Online Classes
+                        </span>
+                    </div>
                 </motion.div>
             </section>
         </div>

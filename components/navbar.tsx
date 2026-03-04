@@ -137,7 +137,9 @@ export function Navbar() {
                   "lg:hidden touch-target flex items-center justify-center w-12 h-12 rounded-full transition-colors",
                   isMobileMenuOpen
                     ? "bg-primary/10 text-primary"
-                    : "bg-foreground/5 backdrop-blur-md text-foreground hover:bg-foreground/10"
+                    : scrolled
+                      ? "bg-foreground/5 backdrop-blur-md text-foreground hover:bg-foreground/10"
+                      : "bg-white/10 backdrop-blur-md text-white hover:bg-white/20 border border-white/20"
                 )}
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               >
@@ -148,14 +150,13 @@ export function Navbar() {
         </div>
       </header>
 
-      {/* Spectacular Mobile Fullscreen Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, clipPath: 'circle(0% at top right)' }}
-            animate={{ opacity: 1, clipPath: 'circle(150% at top right)' }}
-            exit={{ opacity: 0, clipPath: 'circle(0% at top right)' }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
             className="fixed inset-0 z-40 lg:hidden bg-background/95 backdrop-blur-3xl"
           >
             {/* Decorative Background Elements */}

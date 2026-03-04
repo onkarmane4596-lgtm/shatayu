@@ -1,0 +1,160 @@
+﻿diff --git a/app/globals.css b/app/globals.css
+index aa9cf3f..3ebd2bf 100644
+--- a/app/globals.css
++++ b/app/globals.css
+@@ -71,6 +71,7 @@
+ @theme inline {
+   --font-sans: var(--font-sans), 'Poppins', 'system-ui', 'sans-serif';
+   --font-serif: var(--font-sans), 'Poppins', 'system-ui', 'sans-serif';
++  --font-marathi: var(--font-marathi), 'Yatra One', cursive;
+   --color-background: var(--background);
+   --color-foreground: var(--foreground);
+   --color-card: var(--card);
+diff --git a/components/navbar.tsx b/components/navbar.tsx
+index ef6a4c5..3253dbb 100644
+--- a/components/navbar.tsx
++++ b/components/navbar.tsx
+@@ -53,10 +53,10 @@ export function Navbar() {
+       >
+         <div
+           className={cn(
+-            'mx-auto transition-all duration-500 max-w-[1200px]',
++            'mx-auto transition-all duration-700 max-w-[1200px]',
+             scrolled
+-              ? 'rounded-[2rem] bg-background/80 backdrop-blur-xl border border-border/60 shadow-[0_8px_30px_rgb(0,0,0,0.08)] py-2 sm:py-3 px-4 sm:px-6'
+-              : 'rounded-none bg-transparent py-4 sm:py-6 px-4 sm:px-8'
++              ? 'rounded-[2.5rem] bg-white/70 backdrop-blur-2xl border border-white/40 shadow-[0_8px_32px_rgba(27,46,28,0.06),inset_0_1px_1px_rgba(255,255,255,0.6)] py-2.5 sm:py-3.5 px-4 sm:px-6 relative overflow-visible'
++              : 'rounded-none bg-transparent py-4 sm:py-8 px-4 sm:px-8 border-b border-[#84c8a5]/20'
+           )}
+         >
+           <div className="flex items-center justify-between">
+@@ -68,8 +68,8 @@ export function Navbar() {
+               aria-label="Shatayu Yoga Home"
+             >
+               <span className={cn(
+-                "relative flex-shrink-0 flex items-center justify-center overflow-hidden transition-all duration-300",
+-                scrolled ? "w-10 h-10 rounded-xl bg-primary/10" : "w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-background/50 backdrop-blur-sm border border-border/40 shadow-sm"
++                "relative flex-shrink-0 flex items-center justify-center overflow-hidden transition-all duration-500 ease-out",
++                scrolled ? "w-11 h-11 rounded-xl bg-gradient-to-br from-[#e0f2e9] to-white shadow-sm border border-[#84c8a5]/20" : "w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-white/40 backdrop-blur-md border border-white/50 shadow-sm"
+               )}>
+                 <Image
+                   src={logoSrc}
+@@ -77,8 +77,8 @@ export function Navbar() {
+                   width={48}
+                   height={48}
+                   className={cn(
+-                    "object-contain group-hover:scale-105 transition-transform",
+-                    scrolled ? "w-7 h-7" : "w-8 h-8 sm:w-10 sm:h-10"
++                    "object-contain group-hover:scale-110 transition-transform duration-500",
++                    scrolled ? "w-7 h-7 drop-shadow-sm" : "w-8 h-8 sm:w-11 sm:h-11 drop-shadow-md"
+                   )}
+                   priority
+                   unoptimized
+@@ -86,15 +86,15 @@ export function Navbar() {
+                 />
+               </span>
+               <span className={cn(
+-                "font-bold font-serif text-foreground tracking-tight truncate transition-all",
+-                scrolled ? "text-lg sm:text-xl" : "text-xl sm:text-2xl drop-shadow-sm"
++                "font-bold font-serif tracking-tight truncate transition-all duration-500",
++                scrolled ? "text-lg sm:text-xl text-[#1B2E1C]" : "text-xl sm:text-3xl text-[#1B2E1C]"
+               )}>
+-                Shatayu <span className="text-primary font-normal italic">Yoga</span>
++                Shatayu <span className="font-normal italic">Yoga</span>
+               </span>
+             </Link>
+ 
+             {/* Desktop Navigation */}
+-            <nav className="hidden lg:flex items-center justify-center absolute left-1/2 -translate-x-1/2 rounded-full backdrop-blur-md bg-foreground/5 border border-foreground/5 p-1">
++            <nav className="hidden lg:flex items-center justify-center absolute left-1/2 -translate-x-1/2 rounded-full backdrop-blur-xl bg-white/40 border border-white/60 p-1.5 shadow-[0_2px_10px_rgba(27,46,28,0.02)]">
+               {navLinks.map((link) => {
+                 const isActive = pathname === link.href;
+                 return (
+@@ -102,10 +102,10 @@ export function Navbar() {
+                     key={link.href}
+                     href={link.href}
+                     className={cn(
+-                      'relative px-5 py-2 rounded-full text-[15px] font-semibold tracking-wide transition-all duration-300',
++                      'relative px-5 py-2.5 rounded-full text-[15px] font-semibold tracking-wide transition-all duration-500',
+                       isActive
+-                        ? 'text-primary-foreground bg-primary shadow-md'
+-                        : 'text-foreground/80 hover:text-foreground hover:bg-foreground/10'
++                        ? 'text-[#1B2E1C] bg-gradient-to-r from-[#e0f2e9] to-white shadow-[0_4px_12px_rgba(132,200,165,0.2),inset_0_1px_0_rgba(255,255,255,1)] border border-[#84c8a5]/30'
++                        : 'text-[#1B2E1C]/60 hover:text-[#1B2E1C] hover:bg-white/60 hover:shadow-sm'
+                     )}
+                   >
+                     {link.name}
+@@ -119,10 +119,10 @@ export function Navbar() {
+               <Link
+                 href="/contact"
+                 className={cn(
+-                  "hidden md:flex items-center gap-2 rounded-full font-bold transition-all duration-300 active:scale-[0.98]",
++                  "hidden md:flex items-center gap-2 rounded-full font-bold transition-all duration-500 active:scale-[0.96]",
+                   scrolled
+-                    ? "px-5 py-2.5 bg-foreground text-background text-sm hover:shadow-lg hover:-translate-y-0.5"
+-                    : "px-6 py-3 bg-card/80 backdrop-blur-md border border-border/80 text-foreground text-[15px] shadow-sm hover:bg-primary/5 hover:border-primary/40"
++                    ? "px-6 py-2.5 bg-[#1B2E1C] text-[#e0f2e9] text-sm shadow-[0_4px_14px_rgba(27,46,28,0.3)] hover:shadow-[0_6px_20px_rgba(27,46,28,0.4)] hover:-translate-y-0.5 hover:bg-[#264128]"
++                    : "px-7 py-3.5 bg-white/90 backdrop-blur-md border border-white/60 text-[#1B2E1C] text-[15px] shadow-[0_4px_16px_rgba(27,46,28,0.06)] hover:bg-white hover:border-[#84c8a5]/40 hover:shadow-[0_8px_24px_rgba(132,200,165,0.15)] hover:-translate-y-0.5"
+                 )}
+               >
+                 Join Now
+@@ -136,8 +136,10 @@ export function Navbar() {
+                 className={cn(
+                   "lg:hidden touch-target flex items-center justify-center w-12 h-12 rounded-full transition-colors",
+                   isMobileMenuOpen
+-                    ? "bg-primary/10 text-primary"
+-                    : "bg-foreground/5 backdrop-blur-md text-foreground hover:bg-foreground/10"
++                    ? "bg-[#e0f2e9] text-[#1B2E1C]"
++                    : scrolled
++                      ? "bg-[#e0f2e9]/50 backdrop-blur-md text-[#1B2E1C] hover:bg-[#e0f2e9]"
++                      : "bg-white/50 backdrop-blur-sm border border-[#84c8a5]/40 shadow-sm text-[#1B2E1C] hover:bg-white/80"
+                 )}
+                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+               >
+@@ -155,12 +157,15 @@ export function Navbar() {
+             initial={{ opacity: 0, clipPath: 'circle(0% at top right)' }}
+             animate={{ opacity: 1, clipPath: 'circle(150% at top right)' }}
+             exit={{ opacity: 0, clipPath: 'circle(0% at top right)' }}
+-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+-            className="fixed inset-0 z-40 lg:hidden bg-background/95 backdrop-blur-3xl"
++            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }} // Slightly faster, smoother easing curve for mobile
++            className="fixed inset-0 z-40 lg:hidden bg-white/95 backdrop-blur-3xl will-change-[clip-path,opacity]"
+           >
+-            {/* Decorative Background Elements */}
+-            <div className="absolute top-0 right-0 w-full h-[50vh] bg-gradient-to-bl from-primary/10 to-transparent -z-10 blur-3xl" />
+-            <div className="absolute bottom-0 left-0 w-[80vw] h-[40vh] bg-gradient-to-tr from-emerald-500/10 to-transparent -z-10 blur-3xl pointer-events-none" />
++            {/* Decorative Background Elements 
++                Note: Removed heavy blurs here as they severely impact mobile (specifically Android) rendering performance 
++                during complex clip-path animations. Replaced with simpler gradient shapes.
++            */}
++            <div className="absolute top-0 right-0 w-full h-[50vh] bg-gradient-to-bl from-[#e0f2e9] to-transparent -z-10" />
++            <div className="absolute bottom-0 left-0 w-[80vw] h-[40vh] bg-gradient-to-tr from-[#84c8a5]/20 to-transparent -z-10 pointer-events-none" />
+ 
+             <div className="flex flex-col h-[100dvh] overflow-y-auto px-6 sm:px-10">
+ 
+@@ -186,13 +191,13 @@ export function Navbar() {
+                         <div className="flex items-center gap-4">
+                           <link.icon className={cn(
+                             "w-6 h-6 transition-colors duration-300",
+-                            isActive ? "text-primary" : "text-foreground/40"
++                            isActive ? "text-[#1B2E1C]" : "text-[#1B2E1C]/40"
+                           )} />
+                           <span className={cn(
+                             'text-3xl sm:text-4xl font-semibold tracking-tight transition-all duration-300',
+                             isActive
+-                              ? 'text-primary'
+-                              : 'text-foreground/80 group-hover:text-foreground'
++                              ? 'text-[#1B2E1C]'
++                              : 'text-[#1B2E1C]/70 group-hover:text-[#1B2E1C]'
+                           )}>
+                             {link.name}
+                           </span>
+@@ -201,7 +206,7 @@ export function Navbar() {
+                         {/* Elegant Active Indicator / Arrow */}
+                         <span className={cn(
+                           "transition-all duration-300",
+-                          isActive ? "text-primary translate-x-0 opacity-100" : "text-foreground/20 -translate-x-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 pointer-events-none"
++                          isActive ? "text-[#1B2E1C] translate-x-0 opacity-100" : "text-[#1B2E1C]/20 -translate-x-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 pointer-events-none"
+                         )}>
+                           <ArrowRight className="w-6 h-6" />
+                         </span>

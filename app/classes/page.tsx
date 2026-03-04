@@ -18,7 +18,7 @@ export default function ClassesPage() {
         <div className="bg-secondary/20 pb-32 overflow-hidden selection:bg-primary/20 selection:text-primary">
 
             {/* Standard Header Banner with smooth fade in */}
-            <section className="bg-background py-14 sm:py-20 lg:py-28 border-b border-border/40 relative overflow-hidden">
+            <section className="bg-background pt-32 pb-14 sm:pt-40 sm:pb-20 lg:pt-48 lg:pb-28 border-b border-border/40 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-72 h-72 sm:w-96 sm:h-96 bg-primary/10 rounded-full blur-[80px] translate-x-1/2 -translate-y-1/2" />
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -63,7 +63,7 @@ export default function ClassesPage() {
                         <motion.div
                             key={idx}
                             variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
-                            className="flex-shrink-0 w-[85vw] sm:w-[480px] lg:w-auto flex flex-col sm:flex-row bg-background border border-border/40 rounded-[2rem] shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 overflow-hidden hover:-translate-y-2"
+                            className="flex-shrink-0 w-[85vw] sm:w-[480px] lg:w-auto flex flex-col sm:flex-row bg-background border border-border/40 rounded-[2rem] shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] transition-all duration-500 overflow-hidden hover:-translate-y-2 will-change-[transform,opacity]"
                         >
 
                             {/* Image Half */}
@@ -76,10 +76,6 @@ export default function ClassesPage() {
                                 />
                                 {/* Subtle inner shadow overlay */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent opacity-60" />
-
-                                <div className="absolute top-4 left-4 bg-background/90 backdrop-blur md:text-[10px] text-primary font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm text-xs">
-                                    {cls.type}
-                                </div>
                             </div>
 
                             {/* Content Half */}
@@ -106,7 +102,7 @@ export default function ClassesPage() {
                                     className="inline-flex flex-wrap items-center gap-2 text-primary font-bold uppercase tracking-widest text-sm hover:text-primary/70 transition-colors group/btn w-fit"
                                 >
                                     <span className="relative overflow-hidden inline-block pb-1">
-                                        Inquire via WhatsApp
+                                        Join Our Batch
                                         <span className="absolute left-0 bottom-0 w-full h-[2px] bg-primary -translate-x-full group-hover/btn:translate-x-0 transition-transform duration-300" />
                                     </span>
                                     <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
@@ -156,7 +152,7 @@ export default function ClassesPage() {
                                     key={idx}
                                     variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }}
                                     whileHover={{ y: -5, borderColor: 'hsl(var(--primary))' }}
-                                    className="group relative flex flex-col items-center justify-center p-6 rounded-[1.5rem] bg-card/40 backdrop-blur-xl border border-border/80 shadow-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 w-full aspect-square sm:aspect-auto sm:min-h-[160px]"
+                                    className="group relative flex flex-col items-center justify-center p-6 rounded-[1.5rem] bg-card/40 backdrop-blur-xl border border-border/80 shadow-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 w-full aspect-square sm:aspect-auto sm:min-h-[160px] will-change-[transform,opacity]"
                                 >
                                     <div className="w-10 h-10 rounded-2xl bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 shadow-inner group-hover:rotate-12">
                                         <Icon size={18} />
