@@ -57,7 +57,7 @@ export function Navbar() {
                 />
               </div>
               <span className="text-lg sm:text-xl font-bold tracking-tight text-foreground">
-                Shatayu <span className="text-primary font-semibold">Yoga</span>
+                Shatayu <span className="text-primary font-semibold">Yoga Classes</span>
               </span>
             </Link>
 
