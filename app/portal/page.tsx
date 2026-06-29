@@ -56,12 +56,9 @@ function PortalIframe() {
   return (
     <iframe
       src={iframeUrl}
-      className="w-full border-none"
-      style={{ height: 'calc(100vh - 10px)' }}
+      className="w-full h-full border-none"
+      style={{ width: '100vw', height: '100vh' }}
       allowFullScreen
-      // React 18 / Next 15 handles the standard allowFullScreen nicely,
-      // but we can add specific attributes if deeply needed for legacy browsers.
-      // However, the standard `allowFullScreen` prop is generally sufficient today.
     />
   );
 }

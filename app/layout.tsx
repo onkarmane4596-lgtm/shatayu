@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import { Poppins, Yatra_One, Khand } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
-import { Navbar } from '@/components/navbar'
-import { Footer } from '@/components/footer'
 import './globals.css'
 
 const poppins = Poppins({
@@ -102,11 +100,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable} ${yatraOne.variable} ${khand.variable}`}>
       <body className="font-sans font-medium antialiased min-h-screen flex flex-col bg-background text-foreground selection:bg-primary/20 selection:text-primary overflow-x-hidden">
-        <Navbar />
-        <main className="flex-1 w-full relative z-0">
-          {children}
-        </main>
-        <Footer />
+        {children}
         <Analytics />
       </body>
     </html>
