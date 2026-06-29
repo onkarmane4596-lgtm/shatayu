@@ -86,6 +86,15 @@ export function Navbar() {
               })}
 
               <Link
+                href="/portal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-4 px-5 py-2.5 rounded-full border-2 border-[#5DA89F]/20 text-foreground hover:border-[#5DA89F]/50 hover:bg-[#5DA89F]/5 text-sm font-bold transition-all active:scale-95 flex items-center gap-2"
+              >
+                Sign In
+              </Link>
+
+              <Link
                 href="/contact"
                 className="ml-4 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#5DA89F] to-[#5EA8E6] hover:opacity-90 text-[#FFFBF2] text-sm font-bold transition-all shadow-[0_4px_14px_rgba(93,168,159,0.3)] hover:shadow-[0_6px_20px_rgba(93,168,159,0.4)] active:scale-95 flex items-center gap-2"
               >
@@ -155,13 +164,24 @@ export function Navbar() {
                 transition={{ delay: 0.4 }}
                 className="mt-8"
               >
-                <Link
-                  href="/contact"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-full py-4 rounded-xl bg-[#5DA89F] text-white text-center font-bold text-lg shadow-xl shadow-[#5DA89F]/20 block"
-                >
-                  Start Practice Now
-                </Link>
+                <div className="flex flex-col gap-3">
+                  <Link
+                    href="/contact"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="w-full py-4 rounded-xl bg-[#5DA89F] text-white text-center font-bold text-lg shadow-xl shadow-[#5DA89F]/20 block"
+                  >
+                    Start Practice Now
+                  </Link>
+                  <Link
+                    href="/portal"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="w-full py-4 rounded-xl border-2 border-[#5DA89F]/30 text-foreground text-center font-bold text-lg block transition-colors hover:bg-[#5DA89F]/5"
+                  >
+                    Sign In to Portal
+                  </Link>
+                </div>
               </motion.div>
             </nav>
 
